@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy source folder &apos;src&apos; to &apos;ConstrucaoCasaV2&apos;&#x0D;&#x0A;- Original project: &apos;ConstrucaoCasa&apos;&#x0D;&#x0A;- Destination element: &apos;ConstrucaoCasaV2&apos;&#x0D;&#x0A;- Original element: &apos;ConstrucaoCasa/src&apos;" description="Copy source folder" destination="=ConstrucaoCasaV2" element1="/src" flags="6" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyRoots" roots="1" stamp="1701123339365" version="1.0"/>
+</session>

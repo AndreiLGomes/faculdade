@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="Multiplicacao"/>
+    <fullyQualifiedTypeName name="Divisao"/>
+    <fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
+    <fullyQualifiedTypeName name="IOperacao"/>
+    <fullyQualifiedTypeName name="CarroBase"/>
+    <fullyQualifiedTypeName name="Carro"/>
+    <fullyQualifiedTypeName name="CarroEsportivo"/>
+    <fullyQualifiedTypeName name="modelo.Divisao"/>
+    <fullyQualifiedTypeName name="modelo.Multiplicacao"/>
+    <fullyQualifiedTypeName name="modelo.Soma"/>
+    <fullyQualifiedTypeName name="modelo.Subtracao"/>
+    <fullyQualifiedTypeName name="modelo.Operacoes"/>
+    <fullyQualifiedTypeName name="controle.Controladora"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="modelo.Aberturas"/>
+    <fullyQualifiedTypeName name="javax.swing.JComboBox"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="visualizacao.EntradaSaida"/>
+</qualifiedTypeNameHistroy>
