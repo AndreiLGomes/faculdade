@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        select {
+            height: 38px;
+        }
+
+        .checkboxes {
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário de Inscrição</h1>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required>
+
+            <label for="nascimento">Data de Nascimento:</label>
+            <input type="date" id="nascimento" name="nascimento" required>
+
+            <label>Preferências do Evento:</label>
+            <select multiple>
+                <option value="tema1">Tema 1</option>
+                <option value="tema2">Tema 2</option>
+                <option value="tema3">Tema 3</option>
+            </select>
+
+            <label>Workshops:</label>
+            <div class="checkboxes">
+                <input type="checkbox" id="workshop1" name="workshop1">
+                <label for="workshop1">caixa 1</label><br>
+                <input type="checkbox" id="workshop2" name="workshop2">
+                <label for="workshop2">caixa 2</label><br>
+                <input type="checkbox" id="workshop3" name="workshop3">
+                <label for="workshop3">caixa 3</label><br>
+            </div>
+
+            <label for="titulo">Título da Apresentação:</label>
+            <input type="text" id="titulo" name="titulo">
+
+            <label for="resumo">Resumo da Apresentação:</label>
+            <textarea id="resumo" name="resumo" rows="4"></textarea>
+
+            <label for="anexo">Anexo:</label>
+            <input type="file" id="anexo" name="anexo">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
