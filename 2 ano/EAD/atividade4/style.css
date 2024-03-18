@@ -1,0 +1,63 @@
+header {
+    text-align: center; 
+    padding: 30px; 
+    background-color: #FFFFFF;
+
+}
+.a{
+    padding-right: 20px;
+}
+
+
+
+
+.topnav{
+    float: left; /* Flutua para a esquerda */
+    text-align: center; /* Alinhamento centralizado */
+    background-color: #000000; /* Cor de fundo escura */
+    padding: 14px 16px; /* Espaçamento interno */
+    width: 97%;
+}
+  /* Ajuste nos LINKS do Menu principal */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.sellcard {
+    float: left; /* Flutuar para a esquerda */
+    width: 97%; /* Largura de 23.40% */
+    margin: 10px; /* Espaço externo de 10px */
+    display: flex; 
+    background-color: #f2f2f2
+}
+
+.sellcard img {
+    width: 80%; /* Largura da imagem de 80% */
+    margin: auto; /* Espaço externo automático para centralizar a imagem */
+}
+.descricao  {
+    text-align: center; /* Alinhamento de texto centralizado */
+    font-size: 15px; /* Tamanho da fonte de 15 pixels */
+    font-family: Helvetica, sans-serif; /* Família da fonte Helvetica */
+    font-style: normal; /* Estilo da fonte normal */
+    font-weight: 400; /* Espessura da fonte de 400 */
+}
+
+.valor {
+    text-align: center; /* Alinhamento de texto centralizado */
+    font-size: 0.8em; /* Tamanho da fonte proporcional de 0.8em */
+    font-weight: bold; /* Espessura da fonte bold */
+}
+
+.compra {
+    text-align: center; /* Alinhamento de texto centralizado */
+}
+
+.card{
+    width: 10000px;
+}
+
