@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\andre\OneDrive\Área de Trabalho\WorkspaceTrilhaWeb\.metadata\.plugins\org.eclipse.jdt.core
+756925032.index
+1865797976.index
+414085062.index
