@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+/* Reset básico para remover margens e paddings padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #0056b3;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.introducao {
+    margin: 20px 100px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.links-uteis {
+    list-style: none;
+}
+
+.links-uteis li {
+    margin-bottom: 10px;
+}
+
+.links-uteis a:link, .links-uteis a:visited {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.links-uteis a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+  
+    background: #859dc2;
+    color: #112052;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.teste{
+    
+    padding: 20px;
+    background-color: aqua;
+   /* float: left;  Flutuar para a esquerda */
+    width: 100%; /* Largura de 23.40% */
+    
+    display: flex; 
+    justify-content: space-between;
+}
