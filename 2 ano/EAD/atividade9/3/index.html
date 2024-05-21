@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Loja Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Minha Loja</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Loja</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="filters">
+            <h2>Filtros</h2>
+            <div class="filter-category">
+                <h3>Categoria</h3>
+                <select id="categoryFilter">
+                    <option value="all">Todas</option>
+                    <option value="category1">Categoria 1</option>
+                    <option value="category2">Categoria 2</option>
+                </select>
+            </div>
+            <div class="filter-price">
+                <h3>Preço</h3>
+                <input type="range" id="priceFilter" min="0" max="1000" step="50" value="1000">
+                <span id="priceValue">Até R$ 1000</span>
+            </div>
+            <div class="filter-sort">
+                <h3>Ordenar por</h3>
+                <select id="sortFilter">
+                    <option value="default">Padrão</option>
+                    <option value="price-asc">Preço: Menor para Maior</option>
+                    <option value="price-desc">Preço: Maior para Menor</option>
+                </select>
+            </div>
+        </aside>
+        <main class="products">
+            <div class="product" data-category="category1" data-price="250">
+                
+                <h3>Produto 1</h3>
+                <p>R$ 250,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product" data-category="category2" data-price="150">
+                
+                <h3>Produto 2</h3>
+                <p>R$ 150,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product" data-category="category1" data-price="500">
+                
+                <h3>Produto 3</h3>
+                <p>R$ 500,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="product" data-category="category2" data-price="350">
+               
+                <h3>Produto 4</h3>
+                <p>R$ 350,00</p>
+                <button>Comprar</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
