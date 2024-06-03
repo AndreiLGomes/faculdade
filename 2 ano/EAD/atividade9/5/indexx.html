@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>App de Música</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -27,12 +28,12 @@
             <div class="grid">
                 <!-- Cards dos Artistas -->
                 <div class="card">
-                    <img src="img/cantor1.jpg" alt="Artista 1">
-                    <h3>Vicente Fernández</h3>
+                    <img src="img/artist1.jpg" alt="Artista 1">
+                    <h3>Artista 1</h3>
                 </div>
                 <div class="card">
-                    <img src="img/artista2.avif" alt="Artista 2">
-                    <h3>José Afonso</h3>
+                    <img src="img/artist2.jpg" alt="Artista 2">
+                    <h3>Artista 2</h3>
                 </div>
                 <!-- Adicione mais cards conforme necessário -->
             </div>
@@ -43,11 +44,11 @@
                 <!-- Cards dos Álbuns -->
                 <div class="card">
                     <img src="img/album1.jpg" alt="Álbum 1">
-                    <h3>¡Vicente Fernández, el conquistador de las jovencitas! </h3>
+                    <h3>Álbum 1</h3>
                 </div>
                 <div class="card">
                     <img src="img/album2.jpg" alt="Álbum 2">
-                    <h3> José Afonso, O Super Poeta</h3>
+                    <h3>Álbum 2</h3>
                 </div>
                 <!-- Adicione mais cards conforme necessário -->
             </div>
@@ -56,11 +57,8 @@
             <h2>Músicas</h2>
             <div class="list">
                 <!-- Lista de Músicas -->
-                <div class="song-item">
-                    <span>Vicente Fernández - Para Siempre</span>
-                </div>
-                <div class="song-item">
-                    <span>José Afonso - Canta Camarada</span>
+                <div class="song-item" data-id="ZKnjfdN5x6I">
+                    <span>Para Siempre - Vicente Fernández</span>
                 </div>
                 <!-- Adicione mais itens conforme necessário -->
             </div>
@@ -70,11 +68,11 @@
             <div class="grid">
                 <!-- Cards das Playlists -->
                 <div class="card">
-                    
+                    <img src="img/playlist1.jpg" alt="Playlist 1">
                     <h3>Playlist 1</h3>
                 </div>
                 <div class="card">
-                
+                    <img src="img/playlist2.jpg" alt="Playlist 2">
                     <h3>Playlist 2</h3>
                 </div>
                 <!-- Adicione mais cards conforme necessário -->
@@ -83,16 +81,25 @@
     </div>
     <footer>
         <div class="music-player">
-            <div class="controls">
-                <button>Prev</button>
-                <button>Play</button>
-                <button>Next</button>
-            </div>
-            <div class="volume-control">
-                <label for="volume">Volume</label>
-                <input type="range" id="volume" name="volume" min="0" max="100">
-            </div>
+            <div id="player"></div>
         </div>
     </footer>
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = new Plyr('#player', {
+                controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
+                autoplay: true
+            });
+        });
+
+        document.querySelectorAll('.song-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const videoId = item.getAttribute('data-id');
+                const playerHtml = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+                document.getElementById('player').innerHTML = playerHtml;
+            });
+        });
+    </script>
 </body>
 </html>
