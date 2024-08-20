@@ -131,3 +131,7 @@ h2{
 .inscricao2{
     text-align: center;
 }
+
+.bg-vermelhoEscuro {
+  background-color: #8b0000;
+}
