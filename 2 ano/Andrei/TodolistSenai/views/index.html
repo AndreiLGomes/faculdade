@@ -1,0 +1,57 @@
+<DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+
+        <script src="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js
+        "></script>
+        <link href="
+        https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
+        " rel="stylesheet">
+        <title>Lista de tarefas NodeJS</title>
+        <link href="/public/style.css" rel="stylesheet" /> <!-- Adicione o Bootstrap CSS -->
+        
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+
+    </head>
+
+    <body class="container">
+        <div class="tarefas">
+            <h3>TODOLIST NODE</h3>
+            <form class="d-flex" method="post" onsubmit="return validarFormulario()">
+                <input type="text" class="form-control" name="task" />
+                <input type="submit" name="acao" class="btn btn-primary" value="Inserir" />
+            </form>
+            <% for(let i=0; i < tasksList.length; i++){ %>
+                <p>
+                    <%= tasksList[i] %> | <a href="/deletar/<%= i %>"><i class="bi bi-trash"></i></a>
+                </p>
+
+                <% } %>
+        </div> <!-- Adicione o Bootstrap JS (opcional, se precisar dos recursos JavaScript) -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+    </body>
+    <script>
+        function validarFormulario() {
+            var tarefa = document.getElementsByName("task")[0].value;
+            if (tarefa.trim() === '') {
+                Swal.fire({
+                    title: "Oops...",
+                    text: "Por favor, preencha a tarefa antes de enviar",
+                    icon: "error"
+                });
+                return false;
+            }
+            return true;
+        }   
+    </script>
+
+    </html>
