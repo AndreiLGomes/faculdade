@@ -5,9 +5,7 @@ app.listen(2000, () => {
     console.log('http://localhost:2000');
 });
 let carros = [
-    {marca: "Ferrari", ano: 2020, nome: "ferrari23"},
-    {marca: "Mercedes", ano: 2024, nome: "merc"},
-    {marca: "cLaren", ano: 2010, nome: "Maren10"},
+   
 ];
 
 let tasks = ['Passear com o dog', 'Ir ao mercado', 'Comprar']
@@ -25,10 +23,15 @@ app.post("/novo", (req, res) => {
    let marca = req.body.marca;
    let ano = req.body.ano;
    let nome = req.body.nome;
+   let teste = req.body.teste;
     console.log(marca);
     console.log(ano);
     console.log(nome);
-    let novoCarro = {marca, ano, nome}
+    let novoCarro = {marca, ano, nome, teste}
+    if (!marca || !ano || !nome || typeof teste !== 'boolean') {
+        return res.status(400).json({ message: "Todos os campos são obrigatórios e 'disponivel' deve ser booleano." });
+    }
+
     carros.push(novoCarro)
     res.send("ok");
 });
