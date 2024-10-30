@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>App de Música</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <div class="logo">MusicApp</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#artists">Artistas</a></li>
+                <li><a href="#albums">Álbuns</a></li>
+                <li><a href="#songs">Músicas</a></li>
+                <li><a href="#playlists">Playlists</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </header>
+    <div class="container">
+        <section class="artists-section" id="artists">
+            <h2>Artistas</h2>
+            <div class="grid">
+                <!-- Cards dos Artistas -->
+                <div class="card">
+                    <img src="img/artist1.jpg" alt="Artista 1">
+                    <h3>Artista 1</h3>
+                </div>
+                <div class="card">
+                    <img src="img/artist2.jpg" alt="Artista 2">
+                    <h3>Artista 2</h3>
+                </div>
+                <!-- Adicione mais cards conforme necessário -->
+            </div>
+        </section>
+        <section class="albums-section" id="albums">
+            <h2>Álbuns</h2>
+            <div class="grid">
+                <!-- Cards dos Álbuns -->
+                <div class="card">
+                    <img src="img/album1.jpg" alt="Álbum 1">
+                    <h3>Álbum 1</h3>
+                </div>
+                <div class="card">
+                    <img src="img/album2.jpg" alt="Álbum 2">
+                    <h3>Álbum 2</h3>
+                </div>
+                <!-- Adicione mais cards conforme necessário -->
+            </div>
+        </section>
+        <section class="songs-section" id="songs">
+            <h2>Músicas</h2>
+            <div class="list">
+                <!-- Lista de Músicas -->
+                <div class="song-item" data-id="ZKnjfdN5x6I">
+                    <span>Para Siempre - Vicente Fernández</span>
+                </div>
+                <!-- Adicione mais itens conforme necessário -->
+            </div>
+        </section>
+        <section class="playlists-section" id="playlists">
+            <h2>Playlists</h2>
+            <div class="grid">
+                <!-- Cards das Playlists -->
+                <div class="card">
+                    <img src="img/playlist1.jpg" alt="Playlist 1">
+                    <h3>Playlist 1</h3>
+                </div>
+                <div class="card">
+                    <img src="img/playlist2.jpg" alt="Playlist 2">
+                    <h3>Playlist 2</h3>
+                </div>
+                <!-- Adicione mais cards conforme necessário -->
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="music-player">
+            <div id="player"></div>
+        </div>
+    </footer>
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const player = new Plyr('#player', {
+                controls: ['play', 'progress', 'current-time', 'mute', 'volume'],
+                autoplay: true
+            });
+        });
+
+        document.querySelectorAll('.song-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const videoId = item.getAttribute('data-id');
+                const playerHtml = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+                document.getElementById('player').innerHTML = playerHtml;
+            });
+        });
+    </script>
+</body>
+</html>

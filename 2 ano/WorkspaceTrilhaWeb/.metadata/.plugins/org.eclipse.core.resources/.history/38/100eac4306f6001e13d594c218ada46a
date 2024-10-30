@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Site da Coldigo Geladeiras">
+<meta name="keywords" content="Geladeiras, Frost-free, refrigeração">
+<meta name="author" content="Escola Sistêmica">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../../css/site.css">
+<title>Coldigo Geladeiras</title>
+
+</head>
+<body>
+	<header>
+		<img alt="logo da Coldigo Geladeiras" src="../../img/logo.png">
+		<h1>Coldigo Geladeiras</h1>
+	</header>
+	<nav>
+		<a href="../../index.html"><div class="opcao">Inicio</div> </a> <a
+			href="produtos.html">
+			<div class="opcao">Produtos</div>
+		</a> <a href="faleconosco.html">
+			<div class="opcao">Fale conosco</div>
+		</a>
+	</nav>
+	<section>
+
+		<h2>Fale conosco!</h2>
+		<p>Ficou com alguma dúvida? Preencha este formulário e entraremos
+			em contato!</p>
+		<form name="frmfaleconosco" method="get" action="#">
+			<fieldset>
+				<fieldset>
+					<legend>Dados pessoais:</legend>
+					<label for="nome">Nome: </label> <input type="text" name="txtnome"
+						id="nome"> <label for="fone">
+						Telefone: </label> <input
+						type="text" name="txtfone" id="fone"> <label for="email">
+						E-mail:
+					</label> <input type="email" name="txtemail" id="email">
+				</fieldset>
+			</fieldset>
+			<fieldset>
+				<legend>Motivo do contato:</legend>
+			</fieldset>
+		</form>
+
+
+	</section>
+	<footer>Copyright &copy; Escola Sistêmica 2024 </footer>
+
+
+</body>
+</html>

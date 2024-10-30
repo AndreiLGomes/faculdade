@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>sol</title>
+</head>
+
+<body>
+
+    <div class="card text-center bg-danger">
+        <div class="card-header">
+            <h1 class="text-white">O grande Sol</h1>
+        </div>
+    </div>
+
+    <div class="container d-flex justify-content-center">
+        <nav class="nav navbar navbar-expand-lg text-white">
+            <a class="navbar-brand bg-danger text-white" href="index.html">Home</a>
+            <a class="navbar-brand bg-danger text-white" href="conteudo.html">Conteúdo</a>
+            <a class="navbar-brand bg-danger text-white" href="inscricao.html">Inscrição</a>
+        </nav>
+    </div>
+
+
+
+    <div class="descricao">
+        <img class="img" alt="" src="img/sol1.jpg">
+        <div>
+            <p class="centro">Ah, o sol, essa estrela "brilhante" que nos
+                cumprimenta todas as manhãs com um "caloroso" "bom dia". Seu "brilho
+                intenso" é como uma piada de verão, nos deixando "quentes" e
+                "suados", mas sempre nos fazendo "sorrir". Ele é o mestre das
+                "queimadas" e das "brincadeiras quentes", sempre pronto para nos
+                "aquecer" e nos "divertir". Ah, sol, você é verdadeiramente o
+                "comediante" do céu!
+        </div>
+        <img src="img/sol3.jpg" class="rounded float-right" alt="...">
+    </div>
+    <p class="regua"></p>
+
+    <section>
+
+		<h2>Inscrição</h2>
+		<p class="inscricao2">Seu desejo por conhecimento solar é um ato de ousadia. Mas
+			cuidado, pois o sol não perdoa os que se atrevem a buscá-lo.
+			Inscreva-se e enfrente as chamas do saber, se ousar.</p>
+		<form name="frmfaleconosco" method="post" action="#" onsubmit="return validaFaleConosco()">
+
+			
+			<fieldset class="faleConosco">
+				<legend>Dados pessoais:</legend>
+				
+				<label for="nome">Nome: </label>
+				 <input type="text" name="txtnome" id="nome">
+					
+					 <label for="fone">Telefone: </label> 
+					 <input type="text" name="txtfone" id="fone" placeholder="(xx)xxxx-xxxx">
+					
+					
+					 <label for="sexo">Sexo:</label>
+				<div class="genero-container">
+					<label for="masculino">Masculino</label> 
+					<input type="radio" id="masculino" name="genero" value="masculino">
+				</div>
+				<div class="genero-container">
+					<label for="feminino">Feminino</label> 
+					<input type="radio" id="feminino" name="genero" value="feminino">
+				</div>
+				
+				
+				<label for="email">E-mail:</label>
+				 <input type="email" name="txtemail" id="email" placeholder="nome@email.com"> 
+				 
+				 
+				 <label for="nascimento">Data de Nascimento</label>
+				  <input type="text" id="data-nascimento" name="data-nascimento" placeholder="dd/mm/yyyy">
+				  
+				  
+				<div class="botao-container">
+					<label for="fan-clube">Desejo participar do fã-clube</label>
+					 <input class="teste" type="checkbox" id="fan-clube" name="fan-clube">
+				</div>
+				
+				
+				<button class="botao" type="reset">Limpar</button><button class="botao" type="submit">Enviar</button>
+			</fieldset>
+
+
+		</form>
+
+
+	</section>
+
+
+
+
+
+    <div class="card text-center bg-danger">
+        <div class="card-header">
+            <p class="text-white">Copyright &copy; Andrei 2024</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
