@@ -1,0 +1,9 @@
+content-types/org.eclipse.buildship.core.files.gradlebuildscript/charset=UTF-8
+content-types/org.eclipse.eclemma.core.executiondata/charset=UTF-8
+content-types/org.eclipse.jdt.core.javaProperties/charset=UTF-8
+content-types/org.eclipse.jst.jsp.core.jspfragmentsource/charset=UTF-8
+content-types/org.eclipse.jst.jsp.core.jspsource/charset=UTF-8
+content-types/org.eclipse.jst.jsp.core.tagsource/charset=UTF-8
+content-types/org.eclipse.jst.jsp.core.tagxsource/charset=UTF-8
+content-types/org.eclipse.ui.content-type.images/charset=UTF-8
+eclipse.preferences.version=1

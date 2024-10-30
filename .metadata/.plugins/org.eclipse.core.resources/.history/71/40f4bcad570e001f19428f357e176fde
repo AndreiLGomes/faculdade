@@ -1,0 +1,25 @@
+
+
+function validaFaleConosco() {
+	
+	if (document.frmfaleconosco.txtnome.value == "") {
+		alert("Preencha o campo Nome.")
+		document.frmfaleconosco.txtnome.focus();
+		return false;
+	}
+	if (document.frmfaleconosco.txtfone.value == "") {
+		alert("Preencha o campo Telefone.")
+		document.frmfaleconosco.txtfone.focus();
+		return false;
+	}
+	
+	if (document.frmfaleconosco.genero.value != "masculino" || document.frmfaleconosco.genero.value != "feminino" ) {
+		alert("Preencha o campo Telefone.")
+		document.frmfaleconosco.genero.focus();
+		return false;
+	}
+	
+	return true;
+	}
+	
+	
