@@ -1,0 +1,25 @@
+
+
+function validaFaleConosco() {
+
+	if (document.frmfaleconosco.txtnome.value == "") {
+		alert("Preencha o campo Nome.")
+		document.frmfaleconosco.txtnome.focus();
+		return false;
+	}
+	if (document.frmfaleconosco.txtfone.value == "") {
+		alert("Preencha o campo Telefone.")
+		document.frmfaleconosco.txtfone.focus();
+		return false;
+	}
+
+	if (document.forms["frmFaleConosco"]["genero"].value !== "masculino" && document.forms["frmFaleConosco"]["genero"].value !== "feminino") {
+		alert("Por favor, selecione uma opção para o gênero.");
+		document.forms["frmFaleConosco"]["genero"].focus();
+		return false;
+	}
+
+
+	return true;
+}
+

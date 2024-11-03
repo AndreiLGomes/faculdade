@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+</head>
+<body>
+    <form action="insereContato" onsubmit="return validarFormulario();">
+        <legend>Contato</legend>
+        <table>
+            <tr>
+                <td><label for="nome">Nome:</label></td>
+                <td><input type="text" id="nome" name="nome" required></td>
+            </tr>
+            <tr>
+                <td><label for="endereco">Endereço:</label></td>
+                <td><input type="text" id="endereco" name="endereco" required></td>
+            </tr>
+            <tr>
+                <td><label for="telefone">Telefone:</label></td>
+                <td><input type="tel" id="telefone" name="telefone" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Enviar">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var nome = document.getElementById("nome").value;
+            var endereco = document.getElementById("endereco").value;
+            var telefone = document.getElementById("telefone").value;
+
+            // Validação simples do campo Nome: não pode ser "aaa"
+            if (nome.trim() === "aaa") {
+                alert("O campo Nome não pode conter 'aaa'.");
+                return false; // Impede o envio do formulário
+            }
+
+            // Validação simples do campo Endereço
+            if (endereco.trim() === "") {
+                alert("O campo Endereço é obrigatório.");
+                return false;
+            }
+
+            // Validação simples do campo Telefone
+            if (telefone.trim() === "") {
+                alert("O campo Telefone é obrigatório.");
+                return false;
+            }
+
+            return true; // Se todas as validações passarem, o formulário será enviado
+        }
+    </script>
+</body>
+</html>

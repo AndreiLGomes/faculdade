@@ -1,0 +1,43 @@
+
+
+function validaFaleConosco() {
+
+	if (document.frmfaleconosco.txtnome.value == "") {
+		alert("Preencha o campo Nome.")
+		document.frmfaleconosco.txtnome.focus();
+		return false;
+	}
+	if (document.frmfaleconosco.txtfone.value == "") {
+		alert("Preencha o campo Telefone.")
+		document.frmfaleconosco.txtfone.focus();
+		return false;
+	}
+
+	if (!document.getElementById('masculino').checked && !document.getElementById('feminino').checked) {
+		alert('Por favor, selecione o gênero.');
+		return false; // Impede o envio do formulário
+	}
+	if (document.frmfaleconosco.txtemail.value == "") {
+		alert("Preencha o campo Email.")
+		document.frmfaleconosco.txtemail.focus();
+		return false;
+	}
+
+	if (document.getElementById('data-nascimento').value === "") {
+		alert("Preencha o campo Data de Nascimento.");
+		document.getElementById('data-nascimento').focus();
+		return false;
+	}
+
+
+	if (document.getElementById('fan-clube').checked) {
+		alert("Preencha o campo do fan-clube.")
+		document.frmfaleconosco.fan-clube.focus();
+		return false;
+	}
+
+
+
+	return true;
+}
+

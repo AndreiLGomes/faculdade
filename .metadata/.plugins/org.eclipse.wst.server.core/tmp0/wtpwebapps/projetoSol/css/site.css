@@ -1,0 +1,176 @@
+.footer {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: DarkRed; /* Cor de fundo do rodapé */
+	color: #fff; /* Cor do texto do rodapé */
+	padding: 20px; /* Espaçamento interno do rodapé */
+	text-align: center;
+}
+
+header{
+	height: 150px;
+	background-color: DarkRed;	
+	padding: 20px;
+	
+}
+header h1 {
+	text-align: center;
+	color: white;
+	
+}
+.menu {
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	margin-top: 2rem;
+	
+	
+}
+.menu :hover {
+	background-color: red;
+	color: white;
+}
+.opcao{
+	padding: 15px 35px;
+	background-color: DarkRed;
+	text-decoration: none;
+	color: white;
+	border-radius: 6px;
+}
+.descricao {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 10px;
+}
+
+.img {
+	max-width: 300px;
+	border-radius: 6px;
+}
+
+.descricao div {
+	flex-grow: 1;
+	margin: 0 10px;
+	/* Adicione margem para separar a descrição das imagens */
+}
+
+.centro {
+	text-align: center;
+}
+
+.regua {
+	border: 1px solid #400040;
+	margin: 4px;
+}
+
+.boaVinda {
+	text-align: center;
+}
+
+.conteudo {
+	margin: 50px;
+}
+
+/* !!!!!!PAGINA DA TABELA!!!!!!*/
+.tabela{
+	margin: 10px auto;
+	
+	text-align: center;
+}
+h2{
+	text-align: center;
+}
+.cabeTabe{
+	text-align: center;
+}
+.teste{
+	
+	padding: 5px;
+}
+
+.linha1{
+	font-weight: bold;
+	color: white;
+	padding: 5px;
+}
+
+
+.linha2{
+	color: white;
+	padding: 5px;
+}
+
+/* Primeira coluna */
+.teste td:nth-child(1) {
+  background-color: red;
+}
+
+/* Segunda coluna */
+.teste td:nth-child(2) {
+  background-color: DarkRed;
+}
+
+/* Terceira coluna */
+.teste td:nth-child(3) {
+  background-color: red;
+}
+
+/* Quarta coluna */
+.teste td:nth-child(4) {
+  background-color: DarkRed;
+}
+
+/* Quinta coluna */
+.teste td:nth-child(5) {
+  background-color: red;
+}
+
+.faleConosco{
+	width: 300px;
+	margin: 0px auto;
+	font-weight: bolder;
+	margin-bottom: 10px;
+}
+.faleConosco input, .faleConosco textarea, .faleConosco select{
+	margin: 5px;
+	width: 100%;
+	padding: 5px 0;
+}
+
+.faleConosco textarea{
+	height: 100px;
+	resize: none;
+}
+
+.faleConosco button{
+	width: 30%;
+	margin: 0 10%;
+	background-color: #b1ccf5;
+	font-weight: bold;
+	font-size: 16px;
+}
+.botao-container {
+    display: flex;
+    align-items: center;
+}
+
+.botao {
+    margin-left: 10px; /* Adiciona um espaço entre o botão e o checkbox/label */
+}
+
+.genero-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Adiciona um espaço entre os containers */
+}
+
+.genero-container input[type="radio"] {
+    margin-right: 5px; /* Adiciona um espaço entre o input e a label */
+}
+
+.genero-container label {
+    display: inline-block; /* Garante que a label seja tratada como um bloco */
+    width: 20px; /* Define a largura desejada para a label */
+}

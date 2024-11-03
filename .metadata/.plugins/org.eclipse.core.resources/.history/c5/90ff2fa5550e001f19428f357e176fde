@@ -1,0 +1,14 @@
+
+
+function validaFaleConosco() {
+	alert("oi");
+	if (document.frmfaleconosco.txtnome.value == "") {
+		alert("Preencha o campo Nome.")
+		document.frmfaleconosco.txtnome.focus();
+		
+		return false;
+	}
+	return true;
+	}
+	
+	

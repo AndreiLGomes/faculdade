@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../../css/site.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+	integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+	crossorigin="anonymous"></script>
+<script src="../../js/site.js"></script>
+
+
+
+
+<title>Sol</title>
+</head>
+<body>
+	<header> </header>
+	<nav class="menu"></nav>
+	<div class="descricao">
+		<img class="img" alt="" src="../../img/sol1.jpg">
+		<div>
+			<p class="centro">Ah, o sol, essa estrela "brilhante" que nos
+				cumprimenta todas as manhãs com um "caloroso" "bom dia". Seu "brilho
+				intenso" é como uma piada de verão, nos deixando "quentes" e
+				"suados", mas sempre nos fazendo "sorrir". Ele é o mestre das
+				"queimadas" e das "brincadeiras quentes", sempre pronto para nos
+				"aquecer" e nos "divertir". Ah, sol, você é verdadeiramente o
+				"comediante" do céu!
+		</div>
+		<img class="img" alt="" src="../../img/sol3.jpg">
+	</div>
+	<p class="regua"></p>
+	<section>
+
+		<h2>Inscrição</h2>
+		<p>Seu desejo por conhecimento solar é um ato de ousadia. Mas
+			cuidado, pois o sol não perdoa os que se atrevem a buscá-lo.
+			Inscreva-se e enfrente as chamas do saber, se ousar.</p>
+		<form name="frmfaleconosco" method="post" action="#" onsubmit="return validaFaleConosco()">
+
+			
+			<fieldset class="faleConosco">
+				<legend>Dados pessoais:</legend>
+				
+				<label for="nome">Nome: </label>
+				 <input type="text" name="txtnome" id="nome">
+					
+					 <label for="fone">Telefone: </label> 
+					 <input type="text" name="txtfone" id="fone" placeholder="(xx)xxxx-xxxx">
+					
+					
+					 <label for="sexo">Sexo:</label>
+				<div class="genero-container">
+					<label for="masculino">Masculino</label> 
+					<input type="radio" id="masculino" name="genero" value="masculino">
+				</div>
+				<div class="genero-container">
+					<label for="feminino">Feminino</label> 
+					<input type="radio" id="feminino" name="genero" value="feminino">
+				</div>
+				
+				
+				<label for="email">E-mail:</label>
+				 <input type="email" name="txtemail" id="email" placeholder="nome@email.com"> 
+				 
+				 
+				 <label for="nascimento">Data de Nascimento</label>
+				  <input type="text" id="data-nascimento" name="data-nascimento" placeholder="dd/mm/yyyy">
+				  
+				  
+				<div class="botao-container">
+					<label for="fan-clube">Desejo participar do fã-clube</label>
+					 <input class="teste" type="checkbox" id="fan-clube" name="fan-clube">
+				</div>
+				
+				
+				<button class="botao" type="reset">Limpar</button><button class="botao" type="submit">Enviar</button>
+			</fieldset>
+
+
+		</form>
+
+
+	</section>
+
+
+
+	<footer></footer>
+
+</body>
+</html>
