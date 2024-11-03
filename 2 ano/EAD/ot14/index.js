@@ -31,8 +31,8 @@ function ajustar(valor) {
     return valor.toUpperCase(); // Se for uma string, retorna em maiúsculas
 }
 // Exemplos de uso da função
-console.log(ajustar(20)); // Resultado esperado: 30
-console.log(ajustar("Olá TypeScript!")); // Resultado esperado: "OLÁ TYPESCRIPT!"
+console.log(ajustar(20));
+console.log(ajustar("Olá TypeScript!"));
 //5
 // Função incrementa com valor de incremento padrão
 function incrementa(numero, incremento) {
