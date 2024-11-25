@@ -1,0 +1,140 @@
+// Certifique-se de que COLDIGO existe e defina o objeto marca
+var COLDIGO = COLDIGO || {};
+COLDIGO.marca = new Object();
+
+$(document).ready(function () {
+    // Função para cadastrar uma nova marca
+    COLDIGO.marca.cadastrar = function () {
+        var marca = new Object();
+        marca.nome = document.frmAddMarca.nome.value; // Nome do formulário correto
+
+        if (marca.nome == "") {
+            COLDIGO.exibirAviso("Preencha todos os campos!");
+        } else {
+            $.ajax({
+                type: "POST",
+                url: COLDIGO.PATH + "marca/inserir",
+                data: JSON.stringify(marca),
+                success: function (msg) {
+                    COLDIGO.exibirAviso(msg);
+                    $("#addMarca").trigger("reset"); // Reset no formulário correto
+                 
+                },
+                error: function (info) {
+                    COLDIGO.exibirAviso("Erro ao cadastrar uma nova marca: " + info.status + " - " + info.statusText);
+                },
+            });
+        }
+        
+    };
+
+    // Função para buscar marcas
+    COLDIGO.marca.buscar = function () {
+        var valorBusca = $("#campoBuscaMarca").val();
+        $.ajax({
+            type: "GET",
+            url: COLDIGO.PATH + "marca/buscar",
+            data: "valorBusca=" + valorBusca,
+            success: function (dados) {
+                // Insira aqui a lógica para lidar com os dados recebidos
+                dados = JSON.parse(dados);
+                $("#listaMarcas").html(COLDIGO.marca.exibir(dados));
+            },
+            error: function (info) {
+                COLDIGO.exibirAviso("Erro ao consultar os contatos: " + info.status + " - " + info.statusText);
+            },
+        });
+    };
+
+    // Função para exibir marcas em uma tabela
+    COLDIGO.marca.exibir = function (listaDeMarcas) {
+        var tabela =
+            "<table>" +
+            "<tr>" +
+            "<th>Nome</th>" +
+            "<th class='acoes'>Ações</th>" +
+            "</tr>";
+
+        // Verifica se a lista não é nula e possui elementos
+        if (listaDeMarcas && listaDeMarcas.length > 0) {
+            for (var i = 0; i < listaDeMarcas.length; i++) {
+                tabela +=
+                    "<tr>" +
+                    "<td>" +
+                    listaDeMarcas[i].nome +
+                    "</td>" +
+                    "<td>" +
+                    "<a onclick=\"COLDIGO.marca.exibirEdicao('" +
+                    listaDeMarcas[i].id +
+                    "')\"><img src='../../img/edit.png' alt='Editar registro'></a> " +
+                    "<a onclick=\"COLDIGO.marca.excluir('" +
+                    listaDeMarcas[i].id +
+                    "')\">  <img src='../../img/delete.png' alt='Excluir registro'></a>" +
+                    "</td>" +
+                    "</tr>";
+            }
+        } else {
+            // Caso a lista esteja vazia ou seja indefinida
+            tabela += "<tr><td colspan='2'>Nenhuma marca encontrada.</td></tr>";
+        }
+
+        tabela += "</table>";
+        return tabela;
+    };
+    COLDIGO.marca.buscar();
+    
+	COLDIGO.marca.excluir = function (id) {
+	     $.ajax({
+	         type: "DELETE",
+	         url: COLDIGO.PATH + "marca/excluir/" + id,
+	         success: function (msg) {
+	             COLDIGO.exibirAviso(msg);
+	             COLDIGO.marca.buscar();
+	         },
+	         error: function (info) {
+	             COLDIGO.exibirAviso("Erro ao excluir marca: " + info.status + " - " + info.statusText);
+	         },
+	     });
+	 };
+	 
+	 COLDIGO.produto.exibirEdicao = function (id) {
+        $.ajax({
+            type: "GET",
+            url: COLDIGO.PATH + "marca/buscarPorId",
+            data: "id=" + id,
+            success: function (marca) {
+				marca.nome = document.frmAddMarca.nome.value; // Nome do formulário correto
+                
+
+                var selNome = document.getElementById("selNomeEdicao");
+                for (var i = 0; i < selNome.length; i++) {
+                    if (selNome.options[i].value == marca.nome) {
+                        selNome.options[i].setAttribute("selected", "selected");
+                    } else {
+                        selNome.options[i].removeAttribute("selected");
+                    }
+                }
+
+              //  COLDIGO.produto.carregarMarcas(produto.marcaId);
+
+                $("#modalEditaProduto").dialog({
+                    title: "Editar Marca",
+                    height: 400,
+                    width: 550,
+                    modal: true,
+                    buttons: {
+                        Salvar: function () {
+                            COLDIGO.produto.editar();
+                        },
+                        Cancelar: function () {
+                            $(this).dialog("close");
+                        },
+                    },
+                });
+            },
+            error: function (info) {
+                COLDIGO.exibirAviso("Erro ao buscar produto para edição: " + info.status + " - " + info.statusText);
+            },
+        });
+    };
+});

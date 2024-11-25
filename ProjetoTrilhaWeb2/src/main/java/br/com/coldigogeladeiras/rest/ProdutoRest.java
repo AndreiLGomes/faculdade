@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
@@ -28,7 +31,7 @@ public class ProdutoRest extends UtilRest{
 	@Consumes("application/*")
 	
 	public Response inserir(String produtoParam) {
-		System.out.println("estou aquiiiiiiiiiiiiiiiiiiiiiiiii");
+		
 		try {
 			Produto produto = new Gson().fromJson(produtoParam, Produto.class);
 			Conexao conec = new Conexao();
@@ -78,8 +81,97 @@ public class ProdutoRest extends UtilRest{
 		    e.printStackTrace();
 		    return this.buildErrorResponse(e.getMessage());
 		}
+		
 
 	}
+	
+	@DELETE
+	@Path("/excluir/{id}")
+	@Consumes("application/*")
+	public Response excluir(@PathParam("id") int id){
+	    
+		try{
+		    Conexao conec = new Conexao();
+		    Connection conexao = conec.abrirConexao();
+		    JDBCProdutoDAO jdbcProduto = new JDBCProdutoDAO(conexao);
+		    
+		    boolean retorno = jdbcProduto.deletar(id);
+		    String msg = "";
+		    if(retorno){
+		        msg = "Produto excluído com sucesso!";
+		    }else{
+		        msg = "Erro ao excluir produto.";
+		    }
+
+		    conec.fecharConexao();
+
+		    return this.buildResponse(msg);
+
+		    
+		}catch(Exception e){
+		    e.printStackTrace();
+		    return this.buildErrorResponse(e.getMessage());
+		}
+
+		
+	}
+
+	@GET
+	@Path("/buscarPorId")
+	@Consumes("application/*")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response buscarPorId(@QueryParam("id") int id){
+
+	    try{
+	        // Lógica para buscar o produto pelo id
+	    	Produto produto = new Produto();
+	    	Conexao conec = new Conexao();
+	    	Connection conexao = conec.abrirConexao();
+	    	JDBCProdutoDAO jdbcProduto = new JDBCProdutoDAO(conexao);
+
+	    	produto = jdbcProduto.buscarPorId(id);
+	    	
+	    	
+	    	conec.fecharConexao();
+
+	    	return this.buildResponse(produto);
+
+	    }catch(Exception e){
+	        e.printStackTrace();
+	        return this.buildErrorResponse(e.getMessage());
+	    }
+	}
+	
+	@PUT
+	@Path("/alterar")
+	@Consumes("application/*")
+	public Response alterar(String produtoParam){
+		try {
+	        Produto produto = new Gson().fromJson(produtoParam, Produto.class);
+	        Conexao conec = new Conexao();
+	        Connection conexao = conec.abrirConexao();
+	        JDBCProdutoDAO jdbcProduto = new JDBCProdutoDAO(conexao);
+	        
+	        boolean retorno = jdbcProduto.alterar(produto);
+
+	        
+
+	        String msg = "";
+	        if (retorno){
+	            msg = "Produto alterado com sucesso!";
+	        } else {
+	            msg = "Erro ao alterar produto.";
+	        }
+
+	        conec.fecharConexao();
+	        return this.buildResponse(msg);
+
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	        return this.buildErrorResponse(e.getMessage());
+	    }
+	}
+
 
 }
 

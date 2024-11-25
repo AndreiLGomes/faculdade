@@ -14,7 +14,9 @@ $(document).ready(function() {
 	//recebe como parametro o nome da pasta com a página a ser carregada
 	COLDIGO.carregaPagina = function(pagename){
 		//limpa a tag section, excluindo todo o conteúdo
-		
+		if ($(".ui-dialog"))
+    		$(".ui-dialog").remove();
+
 		$("section").empty();
 		//Carrega a página solicitada dentro da tag section
 		$("section").load(pagename+"/", function(response, status, info){

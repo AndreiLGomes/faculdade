@@ -1,11 +1,10 @@
 INDEX VERSION 1.4+C:\Users\andre\OneDrive\Área de Trabalho\WorkspaceTrilhaWeb\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-322944043.index
 4224533802.index
-1758099431.index
-1968452084.index
-4119925239.index
-3901211705.index
 3692246509.index
-394914084.index
+322944043.index
+1968452084.index
+1758099431.index
 2294018805.index
+394914084.index
 4046051376.index
+3901211705.index

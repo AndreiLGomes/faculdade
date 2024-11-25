@@ -1,0 +1,75 @@
+// Certifique-se de que COLDIGO existe e defina o objeto marca
+var COLDIGO = COLDIGO || {};
+COLDIGO.marca = new Object();
+
+$(document).ready(function(){
+	COLDIGO.marca.cadastrar = function(){
+		var marca = new Object();
+		marca.nome = document.frmAddMarca.nome.value;  // Nome do formulário correto
+
+		
+
+		if (marca.nome == "") {
+			COLDIGO.exibirAviso("Preencha todos os campos!");
+		} else {
+			$.ajax({
+				type: "POST",
+				url: COLDIGO.PATH + "marca/inserir",
+				data: JSON.stringify(marca),
+				success: function(msg){
+					COLDIGO.exibirAviso(msg);
+					$("#addMarca").trigger("reset"); // Reset no formulário correto
+				},
+				error: function(info){
+					COLDIGO.exibirAviso("Erro ao cadastrar uma nova marca: " + info.status + " - " + info.statusText);
+				}
+			});
+		}
+	};
+	
+	
+
+	COLDIGO.marca.buscar = function() {
+	    var valorBusca = $("#campoBuscaMarca").val();
+	    $.ajax({
+	        type: "GET",
+	        url: COLDIGO.PATH + "marca/buscar",
+	        data: "valorBusca=" + valorBusca,
+	        success: function(dados) {
+	            // Insira aqui a lógica para lidar com os dados recebidos
+	            dados = JSON.parse(dados);
+	            $("#listaMarcas").html(COLDIGO.marca.exibir(dados));
+	        },
+	        error: function(info) {
+	            COLDIGO.exibirAviso("Erro ao consultar os contatos: " + info.status + " - " + info.statusText);
+	        }
+	    });
+	};
+	
+	COLDIGO.marca.buscarr = function(listaDeMarcas) {
+		var tabela = "<table>" +
+	    "<tr>" +
+	    "<th>nome</th>" +
+	    "<th class='acoes'>Ações</th>" +
+	    "</tr>";
+	if (listaDeMarcas != undefined && listaDeMarcas.length > 0) {
+		for (var i = 0; i < listaDeMarcas.length; i++) {
+		    tabela += "<tr>" +
+		        "<td>" + listaDeMarcas[i].nome + "</td>" +
+		        "<td>" +
+		            "<a onclick=\"COLDIGO.marca.exibirEdicao('"+listaDeMarcas[i].id+"')\"><img src='../../img/edit.png' alt='Editar registro'></a> " +
+		            "<a onclick=\"COLDIGO.marca.excluir('"+listaDeMarcas[i].id+"')\">  <img src='../../img/delete.png' alt='Excluir registro'></a>" +
+		        "</td>" +
+		    "</tr>";
+		}
+
+		} else if (listaDeMarcas == "") {
+		    tabela += "<tr><td colspan='6'>Nenhum registro encontrado</td></tr>";
+		}
+		tabela += "</table>";
+		
+	return tabela;
+
+
+	};
+}); 

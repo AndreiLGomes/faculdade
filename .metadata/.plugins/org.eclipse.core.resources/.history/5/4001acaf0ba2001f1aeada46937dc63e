@@ -1,0 +1,26 @@
+COLDIGO.marca.cadastrar = function(){
+		
+		var marca = new Object();
+		
+		marca.nome = document.frmAddProduto.nome.value;
+	
+		console.log("aqui a marca "+marca);
+		
+		if((marca.nome=="")){
+			COLDIGO.exibirAviso("Preencha todos os campos!");
+		}else{
+			$.ajax({
+				type: "POST",
+				url: COLDIGO.PATH + "marca/inserir",
+				data:JSON.stringify(marca),
+				success: function(msg){
+					COLDIGO.exibirAviso(msg);
+					$("#addProduto").trigger("reset");
+				},
+				error: function (info){
+					COLDIGO.exibirAviso("Erro ao cadastrar um novo produto: "+ info.status+" - "+ info.statusText);
+					
+				}
+			});
+		}
+	}
