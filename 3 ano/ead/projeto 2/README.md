@@ -14,7 +14,7 @@ Ao clicar no botão "Abrir Modal", uma mensagem divertida aparece informando que
 
 Baixe ou clone este repositório
 
-git clone https://github.com/seu-usuario/repositorio.git
+git clone https://github.com/AndreiLGomes/faculdade/tree/master/3%20ano/ead/projeto%202
 
 Abra o arquivo index.html em um navegador
 
