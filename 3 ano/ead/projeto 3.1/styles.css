@@ -1,0 +1,448 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #ecf0f1;
+    overflow-x: hidden;
+}
+
+/* BARRA LATERAL */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #34495e, #2c3e50);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease-in-out;
+}
+
+/* Links da Barra Lateral */
+.sidebar nav ul {
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.sidebar nav ul li {
+    width: 100%;
+    text-align: left;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.sidebar nav ul li a i {
+    margin-right: 10px;
+}
+
+/* Oculta o texto do menu em telas menores */
+.sidebar nav ul li a span {
+    display: inline;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar nav ul li:hover {
+    background-color: #1f2e3d;
+    cursor: pointer;
+}
+
+/* Separador visual */
+.sidebar-separator {
+    width: 80%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    margin: 15px 0;
+}
+
+/* Imagem na parte inferior */
+.sidebar-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 20px;
+}
+
+/* CABEÇALHO */
+.header {
+    width: calc(100% - 250px);
+    height: 60px;
+    background-color: #2980b9;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* ÁREA PRINCIPAL */
+.main-content {
+    margin-left: 250px;
+    margin-top: 80px;
+    width: calc(100% - 250px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: calc(100vh - 120px);
+    /* Agora respeita o tamanho da tela */
+    overflow-y: auto;
+    padding-bottom: 80px;
+    /* Garante espaço para o footer */
+}
+
+/* Cartão de formulário */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Formulários */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Duas colunas */
+    gap: 15px;
+    width: 100%;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botões de seleção (radio) e caixas de seleção (checkbox) */
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-buttons {
+    grid-column: span 2;
+    /* Faz os botões ocuparem toda a linha */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.menu-btn {
+    display: none;
+    /* Oculto por padrão */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* RODAPÉ */
+.footer {
+    width: calc(100% - 250px);
+    height: 60px;
+    background-color: #2980b9;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    font-size: 14px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões */
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Botão Salvar (Verde) */
+.btn-save {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    /* Verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-save:hover {
+    background-color: #218838;
+    /* Verde mais escuro ao passar o mouse */
+}
+
+/* Botão Limpar (Mostarda) */
+.btn-clear {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d4a017;
+    /* Mostarda */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar hr {
+    width: 80%;
+    /* Faz a linha ocupar 80% da largura da sidebar */
+    height: 2px;
+    /* Define a espessura da linha */
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Cor branca transparente */
+    border: none;
+    /* Remove bordas padrão */
+    margin: 15px auto;
+    /* Adiciona espaçamento acima e abaixo e centraliza */
+}
+
+.btn-clear:hover {
+    background-color: #b8860b;
+    /* Mostarda mais escuro ao passar o mouse */
+}
+
+/* Estilização do Modal */
+.modal {
+    display: none;
+    /* Oculto por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Fundo escuro */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão de fechar */
+.close-btn {
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        /* Apenas uma coluna em telas pequenas */
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-save,
+    .btn-clear {
+        width: 100%;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .sidebar nav ul li a {
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 14px;
+    }
+
+    .sidebar {
+        width: 80px;
+    }
+
+    .sidebar nav ul li a {
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .sidebar nav ul li a i {
+        margin-right: 0;
+    }
+
+    .sidebar nav ul li a span {
+        display: none;
+    }
+
+    .sidebar-img {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+        /* Mostra o botão de menu */
+    }
+
+    .header,
+    .footer {
+        width: calc(100% - 80px);
+        left: 80px;
+    }
+
+    .main-content {
+        margin-left: 80px;
+        width: calc(100% - 80px);
+    }
+}
+
+@media (max-width: 500px) {
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 100px;
+        /* Isso empurra os cards para o lado, saindo da barra lateral */
+        width: calc(100% - 100px);
+        /* Garante que os cards ocupem o espaço correto */
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .sidebar {
+        width: 100px;
+    }
+
+    .header {
+        width: calc(100% - 100px);
+        left: 100px;
+    }
+
+    .footer {
+        width: calc(100% - 100px);
+        left: 100px;
+    }
+
+    /* Expande a barra lateral ao clicar */
+    .sidebar.open {
+        width: 200px;
+    }
+
+    .sidebar.open nav ul li a {
+        justify-content: flex-start;
+    }
+
+    .sidebar.open nav ul li a span {
+        display: inline;
+    }
+}

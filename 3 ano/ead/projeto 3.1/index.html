@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário!
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+    <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <!-- Barra Lateral -->
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#info-pessoal"><i class="fas fa-user"></i> <span>Informações Pessoais!</span></a></li>
+                <li><a href="#contato"><i class="fas fa-phone"></i> <span>Contato</span></a></li>
+                <li><a href="#credenciais"><i class="fas fa-lock"></i> <span>Credenciais</span></a></li>
+                <li><a href="#profissionais"><i class="fas fa-briefcase"></i> <span>Profissionais</span></a></li>
+                <li><a href="#preferencias"><i class="fas fa-music"></i> <span>Preferências</span></a></li>
+                <li><a href="#pagamento"><i class="fas fa-credit-card"></i> <span>Pagamento</span></a></li>
+                <li><a href="#outros"><i class="fas fa-file-alt"></i> <span>Outros</span></a></li>
+            </ul>
+        </nav>
+        <hr>
+        <img src="img/images.jpg" alt="Imagem de perfil" class="sidebar-img">
+    </aside>
+
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <h1>Cadastro de Usuário</h1>
+    </header>
+
+    <!-- Área Principal -->
+    <main class="main-content">
+        <form id="meuFormulario">
+            <!-- 1. Informações Pessoais -->
+            <section id="info-pessoal" class="card">
+                <h2>Informações Pessoais</h2>
+                <label>Nome Completo: <input type="text" id="nome"></label>
+                <label>Data de Nascimento: <input type="date" id="dataNascimento"></label>
+                <label>Sexo:
+                    <select id="sexo">
+                        <option value="">Selecione</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Outro</option>
+                    </select>
+                </label>
+                <label>CPF: <input type="text" id="cpf"></label>
+                <label>RG: <input type="text" id="rg"></label>
+                <label>Estado Civil:
+                    <select id="estadoCivil">
+                        <option>Solteiro(a)</option>
+                        <option>Casado(a)</option>
+                        <option>Divorciado(a)</option>
+                    </select>
+                </label>
+                <label>Foto de Perfil: <input type="file" id="fotoPerfil" accept="image/*"></label>
+                <label>Assinatura Digital: <input type="file" id="assinaturaDigital" accept="image/*"></label>
+            </section>
+
+            <!-- 2. Contato -->
+            <section id="contato" class="card">
+                <h2>Contato</h2>
+                <label>Email: <input type="email" id="email"></label>
+                <label>Telefone: <input type="tel" id="telefone"></label>
+                <label>Celular: <input type="tel" id="celular"></label>
+                <label>Endereço: <textarea id="endereco"></textarea></label>
+                <label>CEP: <input type="text" id="cep"></label>
+                <label>País:
+                    <select id="pais">
+                        <option>Brasil</option>
+                        <option>Outro</option>
+                    </select>
+                </label>
+            </section>
+
+            <!-- 3. Credenciais de Acesso -->
+            <section id="credenciais" class="card">
+                <h2>Credenciais de Acesso</h2>
+                <label>Nome de Usuário: <input type="text" id="usuario"></label>
+                <label>Senha: <input type="password" id="senha"></label>
+                <label>Confirmação de Senha: <input type="password" id="confirmarSenha"></label>
+                <label>Pergunta Secreta:
+                    <select id="perguntaSecreta">
+                        <option>Nome do primeiro animal de estimação?</option>
+                        <option>Cidade onde nasceu?</option>
+                        <option>Melhor amigo de infância?</option>
+                    </select>
+                </label>
+                <label>Resposta Secreta: <input type="text" id="respostaSecreta"></label>
+                <label class="checkbox-container">
+                    <span>Aceito os Termos de Uso</span>
+                    <input type="checkbox" id="aceitoTermos">
+                </label>
+
+            </section>
+
+            <!-- 4. Informações Profissionais -->
+            <section id="profissionais" class="card">
+                <h2>Informações Profissionais</h2>
+                <label>Ocupação: <input type="text" id="ocupacao"></label>
+                <label>Empresa: <input type="text" id="empresa"></label>
+                <label>CNPJ: <input type="text" id="cnpj"></label>
+                <label>Cargo: <input type="text" id="cargo"></label>
+                <label>Salário Aproximado: <input type="number" id="salario"></label>
+                <label>Data de Admissão: <input type="date" id="dataAdmissao"></label>
+            </section>
+
+            <!-- 5. Preferências e Redes Sociais -->
+            <section id="preferencias" class="card">
+                <h2>Preferências e Redes Sociais</h2>
+                <label>Gênero Musical Favorito: <input type="text" id="generoMusical"></label>
+                <label>Hobbies:
+                    <input type="checkbox"> Futebol
+                    <input type="checkbox"> Leitura
+                    <input type="checkbox"> Viagens
+                    <input type="checkbox"> Música
+                </label>
+                <label>Facebook: <input type="text" id="facebook"></label>
+                <label>Instagram: <input type="text" id="instagram"></label>
+                <label>LinkedIn: <input type="text" id="linkedin"></label>
+                <label>Notificações via E-mail:
+                    <input type="radio" name="notificacao" value="sim"> Sim
+                    <input type="radio" name="notificacao" value="nao"> Não
+                </label>
+            </section>
+
+            <!-- 6. Pagamento -->
+            <section id="pagamento" class="card">
+                <h2>Pagamento</h2>
+                <label>Número do Cartão: <input type="text" id="cartao"></label>
+                <label>Data de Vencimento: <input type="month" id="vencimento"></label>
+                <label>Código de Segurança: <input type="number" id="codigoSeguranca"></label>
+                <label>Banco:
+                    <select id="banco">
+                        <option>Banco do Brasil</option>
+                        <option>Caixa</option>
+                        <option>Bradesco</option>
+                    </select>
+                </label>
+                <label>Agência: <input type="text" id="agencia"></label>
+                <label>Conta Corrente: <input type="text" id="contaCorrente"></label>
+                <label>Tipo de Conta:
+                    <select id="tipoConta">
+                        <option>Poupança</option>
+                        <option>Corrente</option>
+                    </select>
+                </label>
+            </section>
+
+            <!-- 7. Outros Recursos -->
+            <section id="outros" class="card">
+                <h2>Outros Recursos</h2>
+                <label>Upload de Documento PDF:
+                    <input type="file" id="documentoPdf" accept="application/pdf">
+                </label>
+                <label>Aceito os Termos:
+                    <input type="range" min="0" max="1" step="1" id="aceitoTermosRange">
+                </label>
+                <label>Horário de Preferência para Contato:
+                    <input type="time" id="horarioContato">
+                </label>
+                <label>Número de Dependentes:
+                    <input type="number" id="dependentes" min="0">
+                </label>
+                <label>Cor Favorita:
+                    <input type="color" id="corFavorita">
+                </label>
+                <label>Comentários ou Observações:
+                    <textarea id="comentarios" rows="4"></textarea>
+                </label>
+            </section>
+            <!-- Modal de Mensagem -->
+            <div id="modalErro" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Erro no Formulário</h2>
+                    <p id="mensagemErro"></p>
+                </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="form-buttons">
+                <button type="submit" class="btn-save">Salvar</button>
+                <button type="reset" class="btn-clear">Limpar</button>
+            </div>
+        </form>
+    </main>
+
+
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2025 - Todos os direitos reservados</p>
+    </footer>
+</body>
+
+</html>
